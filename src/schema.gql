@@ -1,0 +1,67 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Category {
+  id: Int!
+  description: String!
+  name: String!
+  products: [Product!]!
+}
+
+type Product {
+  id: Int!
+  name: String!
+  description: String!
+  imageUrl: String!
+  price: Float!
+  weight: Float!
+  categoryId: Int!
+  category: Category!
+}
+
+type Query {
+  findAllProducts: [Product!]!
+  findProductById(id: Int!): Product!
+  findAllCategories: [Category!]!
+  findCategoryById(id: Int!): Category!
+}
+
+type Mutation {
+  createProduct(createProductInput: CreateProductInput!): Product!
+  updateProduct(updateProductInput: UpdateProductInput!): Product!
+  removeProduct(id: Int!): Product!
+  createCategory(createCategoryInput: CreateCategoryInput!): Category!
+  updateCategory(updateCategoryInput: UpdateCategoryInput!): Category!
+  removeCategory(id: Int!): Category!
+}
+
+input CreateProductInput {
+  name: String!
+  description: String!
+  imageUrl: String!
+  price: Float!
+  weight: Float!
+  categoryId: Int!
+}
+
+input UpdateProductInput {
+  name: String!
+  description: String!
+  imageUrl: String!
+  price: Float!
+  weight: Float!
+  categoryId: Int!
+  id: Int!
+}
+
+input CreateCategoryInput {
+  description: String!
+  name: String!
+}
+
+input UpdateCategoryInput {
+  description: String!
+  name: String!
+  id: Int!
+}
