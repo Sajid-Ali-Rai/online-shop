@@ -25,6 +25,7 @@ type Query {
   findProductById(id: Int!): Product!
   findAllCategories: [Category!]!
   findCategoryById(id: Int!): Category!
+  findProductByCategoryId(id: Int!): [Product!]!
 }
 
 type Mutation {

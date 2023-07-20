@@ -22,11 +22,11 @@ export class Product {
   imageUrl: string;
 
   @Field(() => Float)
-  @Column()
+  @Column({ nullable: true, type: 'float8' })
   price: number;
 
   @Field(() => Float)
-  @Column()
+  @Column({ nullable: true, type: 'float8' })
   weight: number;
 
   @Field(() => Int)

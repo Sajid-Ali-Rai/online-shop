@@ -30,7 +30,7 @@ export class CategoryResolver {
 
   @Query(() => [Category])
   findAllCategories() {
-    return this.categoryService.findAllProducts();
+    return this.categoryService.findAllCategories();
   }
 
   @ResolveField('products', (returns) => [Product])
@@ -41,7 +41,13 @@ export class CategoryResolver {
 
   @Query(() => Category)
   findCategoryById(@Args('id', { type: () => Int }) id: number) {
-    return this.categoryService.findProductByID(id);
+    return this.categoryService.findCategoryById(id);
+  }
+
+  @Query(() => [Product])
+  findProductByCategoryId(@Args('id', { type: () => Int }) id: number) {
+    // return this.categoryService.findProductsByCategoryId(id);
+    return this.productService.findAllByCategoryId({ categoryId: id });
   }
 
   @Mutation(() => Category)
