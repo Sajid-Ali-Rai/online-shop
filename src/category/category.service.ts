@@ -39,12 +39,4 @@ export class CategoryService {
       },
     });
   }
-
-  update(id: number, updateCategoryInput: UpdateCategoryInput) {
-    return `This action updates a #${id} category`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} category`;
-  }
 }

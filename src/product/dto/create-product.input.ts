@@ -4,26 +4,26 @@ import { IsInt, IsNumber, Length } from 'class-validator';
 @InputType()
 export class CreateProductInput {
   @Field()
-  // @Length(3, 100)
+  @Length(5, 100)
   name: string;
 
   @Field()
-  // @Length(3, 1000)
+  @Length(5, 1000)
   description: string;
 
   @Field()
-  // @Length(3, 1000)
+  @Length(5, 1000)
   imageUrl: string;
 
   @Field(() => Float)
-  // @IsNumber()
+  @IsNumber()
   price: number;
 
   @Field(() => Float)
-  // @IsNumber()
+  @IsNumber()
   weight: number;
 
   @Field(() => Int)
-  // @IsInt()
+  @IsInt()
   categoryId: number;
 }

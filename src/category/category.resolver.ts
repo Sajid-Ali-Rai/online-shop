@@ -10,7 +10,6 @@ import {
 import { CategoryService } from './category.service';
 import { Category } from './entities/category.entity';
 import { CreateCategoryInput } from './dto/create-category.input';
-import { UpdateCategoryInput } from './dto/update-category.input';
 import { ProductService } from 'src/product/product.service';
 import { Product } from 'src/product/entities/product.entity';
 
@@ -48,20 +47,5 @@ export class CategoryResolver {
   findProductByCategoryId(@Args('id', { type: () => Int }) id: number) {
     // return this.categoryService.findProductsByCategoryId(id);
     return this.productService.findAllByCategoryId({ categoryId: id });
-  }
-
-  @Mutation(() => Category)
-  updateCategory(
-    @Args('updateCategoryInput') updateCategoryInput: UpdateCategoryInput,
-  ) {
-    return this.categoryService.update(
-      updateCategoryInput.id,
-      updateCategoryInput,
-    );
-  }
-
-  @Mutation(() => Category)
-  removeCategory(@Args('id', { type: () => Int }) id: number) {
-    return this.categoryService.remove(id);
   }
 }

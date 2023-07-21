@@ -2,12 +2,12 @@ import { InputType, Int, Field } from '@nestjs/graphql';
 import { Length } from 'class-validator';
 
 @InputType()
-export class CreateCategoryInput {
+export class CreateAppUserInput {
   @Field()
-  @Length(5, 1000)
-  description: string;
+  @Length(4, 100)
+  name: string;
 
   @Field()
-  @Length(5, 100)
-  name: string;
+  @Length(4, 100)
+  password: string;
 }

@@ -9,15 +9,15 @@ export class UpdateProductInput extends PartialType(CreateProductInput) {
   id: number;
 
   @Field()
-  @Length(2, 100)
+  @Length(5, 100)
   name: string;
 
   @Field()
-  @Length(2, 1000)
+  @Length(5, 1000)
   description: string;
 
+  @Length(5, 1000)
   @Field()
-  @Length(2, 1000)
   imageUrl: string;
 
   @Field(() => Float)
