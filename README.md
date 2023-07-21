@@ -48,30 +48,42 @@ database: 'xxxxxx',
 ### Queries
 
 type Query {
+
 findAllProducts: [Product!]!
+
 findProductById(id: Int!): Product!
+
 findAllCategories: [Category!]!
+
 findCategoryById(id: Int!): Category!
+
 findProductByCategoryId(id: Int!): [Product!]!
 
-**protected with Admin Token**
+#### protected with Admin Token
 findAllUsers: [AppUser!]!
 
 findUserById(id: Int!): AppUser!
+
 singIn(name: String!, password: String!): String!
 }
 
 ### Mutations
 
 type Mutation {
+
 createProduct(createProductInput: CreateProductInput!): Product!
+
 updateProduct(updateProductInput: UpdateProductInput!): Product!
+
 removeProduct(id: Int!): Product!
+
 createCategory(createCategoryInput: CreateCategoryInput!): Category!
+
 createAppUser(createAppUserInput: CreateAppUserInput!): AppUser!
+
 updateAppUser(updateAppUserInput: UpdateAppUserInput!): AppUser!
 
-**protected with Admin Token**
+#### protected with Admin Token
 removeAppUser(id: Int!): AppUser!
 }
 
@@ -81,10 +93,4 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 
 ## Stay in touch
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+- Author - Sajid Ali
